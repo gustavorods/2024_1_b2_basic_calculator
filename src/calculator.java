@@ -16,6 +16,7 @@ public class calculator extends JFrame {
         setSize(600, 400);
         setResizable(false);
 
+
         // Criando o texto dos JLabel
         rotuloNum1 = new JLabel("Número 1: ");
         rotuloNum2 = new JLabel("Número 2: ");
@@ -42,6 +43,7 @@ public class calculator extends JFrame {
         campoNum1 = new JTextField(5);
         campoNum2 = new JTextField(5);
 
+
         // Posicionando os objetos
         rotuloNum1.setBounds(40, 35, 100, 20);
         rotuloNum2.setBounds(250, 35, 80, 20);
@@ -65,6 +67,7 @@ public class calculator extends JFrame {
         sair.setBounds(460,200,100,20);
 
         credito.setBounds(70, 300,450,80);
+
 
         // Função de somar
         somar.addActionListener(new ActionListener() {
@@ -183,6 +186,7 @@ public class calculator extends JFrame {
                 System.exit(0);
             }
         });
+
 
         // Atalhos com teclas (alt + letra)
         sair.setMnemonic(KeyEvent.VK_S);
