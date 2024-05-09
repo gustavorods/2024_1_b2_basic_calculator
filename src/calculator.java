@@ -177,6 +177,18 @@ public class calculator extends JFrame {
             }
         });
 
+        // Função de sair
+        sair.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+        // Atalhos com teclas (alt + letra)
+        sair.setMnemonic(KeyEvent.VK_S);
+        habilitar.setMnemonic(KeyEvent.VK_H);
+        desabilitar.setMnemonic(KeyEvent.VK_D);
+
 
         // Adicionando os objetos
         tela.add(campoNum1);
