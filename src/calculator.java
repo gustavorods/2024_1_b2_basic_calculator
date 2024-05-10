@@ -9,7 +9,7 @@ public class calculator extends JFrame {
     JLabel rotuloNum1, rotuloNum2, operacao, funcao, rotuloResultado, resultado, credito;
 
     public calculator() {
-        // Formatação básica
+        // Configurações da janela
         super("Calculadora básica");
         Container tela = getContentPane();
         setLayout(null);
@@ -68,124 +68,124 @@ public class calculator extends JFrame {
 
         credito.setBounds(70, 300,450,80);
 
+        // Funções de todos os botões
+            // Função de somar
+            somar.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    if(rotuloResultado.getForeground().equals(Color.gray)) {
+                        rotuloResultado.setBounds(40, 60, 400,20);
+                        rotuloResultado.setText("não vai aparecer o resultado, pois o resultado está desabilitado.");
+                    }
+                    else {
+                        float num1 = Float.parseFloat(campoNum1.getText());
+                        float num2 = Float.parseFloat(campoNum2.getText());
 
-        // Função de somar
-        somar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if(rotuloResultado.getForeground().equals(Color.gray)) {
-                    rotuloResultado.setBounds(40, 60, 400,20);
-                    rotuloResultado.setText("não vai aparecer o resultado, pois o resultado está desabilitado.");
+                        float soma = num1 + num2;
+                        resultado.setText(String.valueOf(soma));
+                    }
                 }
-                else {
-                    float num1 = Float.parseFloat(campoNum1.getText());
-                    float num2 = Float.parseFloat(campoNum2.getText());
+            });
 
-                    float soma = num1 + num2;
-                    resultado.setText(String.valueOf(soma));
+            // Função de subtrair
+            subtrair.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    if(rotuloResultado.getForeground().equals(Color.gray)) {
+                        rotuloResultado.setBounds(40, 60, 400,20);
+                        rotuloResultado.setText("não vai aparecer o resultado, pois o resultado está desabilitado.");
+                    }
+                    else {
+                        float num1 = Float.parseFloat(campoNum1.getText());
+                        float num2 = Float.parseFloat(campoNum2.getText());
+
+                        float sub = num1 - num2;
+                        resultado.setText(String.valueOf(sub));
+                    }
                 }
-            }
-        });
+            });
 
-        // Função de subtrair
-        subtrair.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if(rotuloResultado.getForeground().equals(Color.gray)) {
-                    rotuloResultado.setBounds(40, 60, 400,20);
-                    rotuloResultado.setText("não vai aparecer o resultado, pois o resultado está desabilitado.");
+            // Função de multiplicação
+            multiplicar.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    if(rotuloResultado.getForeground().equals(Color.gray)) {
+                        rotuloResultado.setBounds(40, 60, 400,20);
+                        rotuloResultado.setText("não vai aparecer o resultado, pois o resultado está desabilitado.");
+                    }
+                    else {
+                        float num1 = Float.parseFloat(campoNum1.getText());
+                        float num2 = Float.parseFloat(campoNum2.getText());
+
+                        float mult = num1 * num2;
+                        resultado.setText(String.valueOf(mult));
+                    }
                 }
-                else {
-                    float num1 = Float.parseFloat(campoNum1.getText());
-                    float num2 = Float.parseFloat(campoNum2.getText());
+            });
 
-                    float sub = num1 - num2;
-                    resultado.setText(String.valueOf(sub));
+            // Função de divisão
+            dividir.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    if(rotuloResultado.getForeground().equals(Color.gray)) {
+                        rotuloResultado.setBounds(40, 60, 400,20);
+                        rotuloResultado.setText("não vai aparecer o resultado, pois o resultado está desabilitado.");
+                    }
+                    else {
+                        float num1 = Float.parseFloat(campoNum1.getText());
+                        float num2 = Float.parseFloat(campoNum2.getText());
+
+                        float div = num1 / num2;
+                        resultado.setText(String.valueOf(div));
+                    }
                 }
-            }
-        });
+            });
 
-        // Função de multiplicação
-        multiplicar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if(rotuloResultado.getForeground().equals(Color.gray)) {
-                    rotuloResultado.setBounds(40, 60, 400,20);
-                    rotuloResultado.setText("não vai aparecer o resultado, pois o resultado está desabilitado.");
+            // Função de limpar os campos
+            limpar.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    campoNum1.setText("");
+                    campoNum2.setText("");
+                    resultado.setText("");
                 }
-                else {
-                    float num1 = Float.parseFloat(campoNum1.getText());
-                    float num2 = Float.parseFloat(campoNum2.getText());
+            });
 
-                    float mult = num1 * num2;
-                    resultado.setText(String.valueOf(mult));
+            // Função de desabitar a Jlabel do resultado
+            desabilitar.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    rotuloResultado.setForeground(Color.gray);
+                    resultado.setText("");
                 }
-            }
-        });
+            });
 
-        // Função de divisão
-        dividir.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if(rotuloResultado.getForeground().equals(Color.gray)) {
-                    rotuloResultado.setBounds(40, 60, 400,20);
-                    rotuloResultado.setText("não vai aparecer o resultado, pois o resultado está desabilitado.");
+            // Função de habilitar a Jlabel do resultado
+            habilitar.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    rotuloResultado.setBounds(430, 35, 120,20);
+                    rotuloResultado.setText("Resultado: ");
+                    rotuloResultado.setForeground(Color.RED);
+                    resultado.setText("");
                 }
-                else {
-                    float num1 = Float.parseFloat(campoNum1.getText());
-                    float num2 = Float.parseFloat(campoNum2.getText());
+            });
 
-                    float div = num1 / num2;
-                    resultado.setText(String.valueOf(div));
+            // Função de ocultar a Jlabel do resultado
+            ocultar.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    rotuloResultado.setVisible(false);
+                    resultado.setVisible(false);
                 }
-            }
-        });
+            });
 
-        // Função de limpar os campos
-        limpar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                campoNum1.setText("");
-                campoNum2.setText("");
-                resultado.setText("");
-            }
-        });
+            // Função de exibir a Jlabel do resultado
+            exibir.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    rotuloResultado.setVisible(true);
+                    resultado.setVisible(true);
+                }
+            });
 
-        // Função de desabitar a Jlabel do resultado
-        desabilitar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                rotuloResultado.setForeground(Color.gray);
-                resultado.setText("");
-            }
-        });
-
-        // Função de habilitar a Jlabel do resultado
-        habilitar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                rotuloResultado.setBounds(430, 35, 120,20);
-                rotuloResultado.setText("Resultado: ");
-                rotuloResultado.setForeground(Color.RED);
-                resultado.setText("");
-            }
-        });
-
-        // Função de ocultar a Jlabel do resultado
-        ocultar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                rotuloResultado.setVisible(false);
-                resultado.setVisible(false);
-            }
-        });
-
-        // Função de exibir a Jlabel do resultado
-        exibir.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                rotuloResultado.setVisible(true);
-                resultado.setVisible(true);
-            }
-        });
-
-        // Função de sair
-        sair.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+            // Função de sair
+            sair.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    System.exit(0);
+                }
+            });
 
 
         // Atalhos com teclas (alt + letra)
