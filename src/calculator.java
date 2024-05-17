@@ -50,7 +50,7 @@ public class calculator extends JFrame {
         campoNum1.setBounds(120, 35, 80, 20);
         campoNum2.setBounds(330,35,80,20);
         rotuloResultado.setBounds(430, 35, 120,20);
-        resultado.setBounds(500, 35, 120,20);
+        resultado.setBounds(520, 35, 120,20);
 
         operacao.setBounds(40, 100, 100,20);
         somar.setBounds(40, 130, 80,20);
@@ -72,68 +72,44 @@ public class calculator extends JFrame {
             // Função de somar
             somar.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    if(rotuloResultado.getForeground().equals(Color.gray)) {
-                        rotuloResultado.setBounds(40, 60, 400,20);
-                        rotuloResultado.setText("não vai aparecer o resultado, pois o resultado está desabilitado.");
-                    }
-                    else {
                         float num1 = Float.parseFloat(campoNum1.getText());
                         float num2 = Float.parseFloat(campoNum2.getText());
 
                         float soma = num1 + num2;
                         resultado.setText(String.valueOf(soma));
-                    }
                 }
             });
 
             // Função de subtrair
             subtrair.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    if(rotuloResultado.getForeground().equals(Color.gray)) {
-                        rotuloResultado.setBounds(40, 60, 400,20);
-                        rotuloResultado.setText("não vai aparecer o resultado, pois o resultado está desabilitado.");
-                    }
-                    else {
                         float num1 = Float.parseFloat(campoNum1.getText());
                         float num2 = Float.parseFloat(campoNum2.getText());
 
                         float sub = num1 - num2;
                         resultado.setText(String.valueOf(sub));
-                    }
                 }
             });
 
             // Função de multiplicação
             multiplicar.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    if(rotuloResultado.getForeground().equals(Color.gray)) {
-                        rotuloResultado.setBounds(40, 60, 400,20);
-                        rotuloResultado.setText("não vai aparecer o resultado, pois o resultado está desabilitado.");
-                    }
-                    else {
                         float num1 = Float.parseFloat(campoNum1.getText());
                         float num2 = Float.parseFloat(campoNum2.getText());
 
                         float mult = num1 * num2;
                         resultado.setText(String.valueOf(mult));
-                    }
                 }
             });
 
             // Função de divisão
             dividir.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    if(rotuloResultado.getForeground().equals(Color.gray)) {
-                        rotuloResultado.setBounds(40, 60, 400,20);
-                        rotuloResultado.setText("não vai aparecer o resultado, pois o resultado está desabilitado.");
-                    }
-                    else {
                         float num1 = Float.parseFloat(campoNum1.getText());
                         float num2 = Float.parseFloat(campoNum2.getText());
 
                         float div = num1 / num2;
                         resultado.setText(String.valueOf(div));
-                    }
                 }
             });
 
@@ -149,18 +125,16 @@ public class calculator extends JFrame {
             // Função de desabitar a Jlabel do resultado
             desabilitar.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    rotuloResultado.setForeground(Color.gray);
-                    resultado.setText("");
+                    rotuloResultado.setEnabled(false);
+                    resultado.setEnabled(false);
                 }
             });
 
             // Função de habilitar a Jlabel do resultado
             habilitar.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    rotuloResultado.setBounds(430, 35, 120,20);
-                    rotuloResultado.setText("Resultado: ");
-                    rotuloResultado.setForeground(Color.RED);
-                    resultado.setText("");
+                    rotuloResultado.setEnabled(true);
+                    resultado.setEnabled(true);
                 }
             });
 
